@@ -116,13 +116,6 @@ const bookTurf = async (req, res) => {
     .populate('game')
     .populate('hostedBy')
     .populate('turf')
-    await Emailhelper('game.html',populateBooking.hostedBy.email,{
-      name:populateBooking.turf.name,
-      address:populateBooking.turf.address,
-      duration:populateBooking.duration,
-      time:populateBooking.startTime,
-      transactionId:transactionId
-    })
     res.status(200).json({
       success: true,
       message: 'Booking created successfully',
