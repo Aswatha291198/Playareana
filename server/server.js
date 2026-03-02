@@ -38,7 +38,8 @@ app.use(
         "'self'",
         "https://fonts.gstatic.com",
         "https://cdnjs.cloudflare.com"
-      ]
+      ],
+      frameSrc: ["'self'", "https://js.stripe.com"],  // ← Add this
     }
   })
 );
