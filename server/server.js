@@ -28,7 +28,16 @@ app.use(
       scriptSrc: ["'self'", "https://js.stripe.com", "'unsafe-inline'"],
       connectSrc: ["'self'", "https://api.stripe.com"],
       imgSrc: ["'self'", "data:", "https://5.imimg.com", "https://*.stripe.com"],
-      styleSrc: ["'self'", "'unsafe-inline'"]
+      styleSrc: [
+        "'self'",
+        "'unsafe-inline'",
+        "https://cdnjs.cloudflare.com",
+        "https://fonts.googleapis.com"
+      ],
+      fontSrc: [
+        "'self'",
+        "https://fonts.gstatic.com"
+      ]
     }
   })
 );
