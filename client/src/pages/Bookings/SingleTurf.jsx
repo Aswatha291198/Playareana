@@ -57,13 +57,13 @@ const SingleTurf = () => {
   }}
 >
   <section className=' m-20  flex-c'>
-  <h1 className='font-p b-color p-left ls'>{turf.name}</h1>
+  <h1 className='font-p b-color p-left ls'>{turf?.name}</h1>
   
     <span className='p-left  cap font-p f-6 ls b-color mt '>{turf.address}</span>
 </section>
 <section className='w-100 '>
 <div className=' w-100 p-left ml-3'>
-  <img src={turf.poster} alt="x"
+  <img src={turf?.poster} alt="x"
   className='bor '
   style={{
     height:500,
