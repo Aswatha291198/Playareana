@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            letter-spacing: 0.3px;
+        }
+        .container{
+             width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .verify-cont{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+         <div class="verify-cont">
+            <h2>Otp Verification</h2>
+         </div>
+         <h2>Hi #{name}</h2>
+         <div class="content">
+            <p>One-Time Password (OTP) for reseting the password :</p>
+            <table>
+                <tr>
+                    <td
+                    style=" border-radius: 6px 6px 0 0;
+                background-color: #f9f9f9;
+                padding: 10px;">
+                #{otp}
+            </td>
+                </tr>
+                <tr>
+                    <td>
+                        Please use this otp to Reset youd password
+                    </td>
+                </tr>
+            </table>
+         </div>
+    </div>
+</body>
+</html>
