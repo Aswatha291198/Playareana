@@ -66,11 +66,14 @@ const BookModel = ({
       }
       response=await bookTurf(payload) 
         if(response.success){
+            console.log('insdie if');
+            
                 message.success('Turf booked Successfully')
                 navigate('/myBookings')
         }
         else{
             message.warning(response.message)
+            console.log('insdie else');
         }
     } catch (error) {
         message.error(error.message)     

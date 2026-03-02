@@ -33,6 +33,7 @@ const Emailhelper =async(templateName,receiverEmail,creds)=>{
             html:content
         }
             await transport.sendMail(emailDetails)
+            console.log('email sent');
             
             
     } catch (error) {
