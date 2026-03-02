@@ -121,6 +121,13 @@ const bookTurf = async (req, res) => {
       message: 'Booking created successfully',
       data:populateBooking
     })
+    await Emailhelper('game.html',populateBooking.hostedBy.email,{
+      name:populateBooking.turf.name,
+      address:populateBooking.turf.address,
+      duration:populateBooking.duration,
+      time:populateBooking.startTime,
+      transactionId:transactionId
+    })
 
   } catch (error) {
      return res.status(500).send({
