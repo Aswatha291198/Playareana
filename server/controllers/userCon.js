@@ -50,6 +50,8 @@ const getCurrentUser = async (req, res) => {
 }
 const UpdateUser = async (req, res) => {
     try {
+        console.log(req.body);
+        
         const updateUser = await User.findByIdAndUpdate(req.body.id, req.body)
         if (!updateUser) {
             return res.status(404).send("User not found")
