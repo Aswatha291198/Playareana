@@ -5,6 +5,7 @@ const fs = require('fs');
 // Create transporter using Gmail and App Password
 const transport = nodemailer.createTransport({
   service: 'gmail',
+  port:587,
   auth: {
     user: process.env.GMAIL_USER,       // Your Gmail account
     pass: process.env.GMAIL_PASSWORD,   // Your Gmail App Password
@@ -26,12 +27,12 @@ function replaceContent(content, creds) {
   }, content);
 }
 
-// Main function to send email
+
 const Emailhelper = async (templateName, receiverEmail, creds) => {
   try {
     const templatePath = path.join(__dirname, "email_templates", templateName);
 
-    // Read template file
+   
     let content = await fs.promises.readFile(templatePath, "utf-8");
     content = replaceContent(content, creds);
 
