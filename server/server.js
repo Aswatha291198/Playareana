@@ -28,6 +28,9 @@ app.use('/turfo/turfs',turfRouter)
 app.use('/turfo/game',gameRouter)
 app.use('/turfo/city',cityRouter)
 app.use('/turfo/booking',bookRouter)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(clientBuildPath, 'index.html'));
+});
 const port=8082
 app.listen(port,()=>{
     console.log(`Server is Running on the http://localhost:${port}`);
