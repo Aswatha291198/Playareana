@@ -38,9 +38,9 @@ const Emailhelper =async(templateName,receiverEmail,creds)=>{
             
     } catch (error) {
          if (error.code === "ENOENT") {
-      console.error("Template file not found:", err.message);
+      console.error("Template file not found:", error.message);
     } else if (error.response && error.response.body) {
-      console.error("Error sending email:", err.response.body);
+      console.error("Error sending email:", error.response.body);
     } else {
       console.error("Error occurred:", error.message);
     }

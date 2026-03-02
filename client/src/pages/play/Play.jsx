@@ -47,9 +47,12 @@ const getDate=(date)=>{
   return moment(date).format('DD MMM YYYY')
 }
 
-const filterGames=venue.filter((b)=>{
-  const gameTime=moment(b.startTime)
-  return gameTime.isAfter(now.hour())
+
+const filterGames = venue.filter(b => {
+  if (!b.date || b.startTime == null) return false
+
+  const gameStart = moment(b.date).set('hour', b.startTime).set('minute', 0).set('second', 0)
+  return gameStart.isAfter(moment()) 
 })
   const getData = async () => {
     try {
