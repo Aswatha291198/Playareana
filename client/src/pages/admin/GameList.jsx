@@ -31,16 +31,6 @@ getData()
 
    const columns=[
     {
-      key:'img',
-      title:'Sport Image',
-      dataIndex:'poster',
-      render:(_,data)=>{
-        return(
-        <img src={data.poster} alt="sfjnj" />
-      )}
-    },
-
-    {
       key:'name',
       title:'Sport Name',
       dataIndex:'name'
