@@ -138,8 +138,11 @@ getData()
                             }
                             else if(paymentIntent.status==='succeeded'){
                                 message.success('Payment successfull')
+                                console.log('hi');
+                                
                                  await book(paymentIntent.id)  
                                  setProcessing(false)  
+                                 setIsBookModal(false)
                             }
 
                             }
@@ -148,6 +151,7 @@ getData()
                         message.error(error.message)
                     }finally{
                         dispatch(hideLoading())  
+                        setProcessing(false)
                     }
                      }
    

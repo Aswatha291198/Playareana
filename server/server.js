@@ -21,7 +21,19 @@ const clientBuildPath=path.join(__dirname,'../client/dist')
 app.use(express.static(clientBuildPath))
 connectDB() 
 app.use(express.json())
-app.use(helmet())
+
+const helmet = require('helmet');
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "https://js.stripe.com"],
+      connectSrc: ["'self'", "https://api.stripe.com"],
+      imgSrc: ["'self'", "data:", "https://*.stripe.com"],
+      styleSrc: ["'self'", "'unsafe-inline'"]
+    }
+  })
+)
 app.use('/turfo',apiLimit)
 app.use('/turfo/user',userRoute)
 app.use('/turfo/turfs',turfRouter)

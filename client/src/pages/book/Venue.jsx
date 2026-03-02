@@ -42,6 +42,7 @@ const navigate=useNavigate()
         venues.map((turf)=>{
             return(
                 <Card 
+                key={turf._id}
                 className='flex-c gap bor m-20 c-p'
                 style={{
                     height:350,

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
-import './edit.css'
 import { Button, Form,Input, message } from 'antd';
 import { useDispatch } from 'react-redux';
 import { hideLoading,showLoading,setUser } from '../../../redux/slice/userSlice';

@@ -36,15 +36,12 @@ export const GetCurrentUser=async(values)=>{
         success: false,
         message: error.message }
 
-     
         
     }
 }
 export const updateuser=async(values)=>{
     try {
-        console.log(values);
-        
-        
+  
         const response=await axiosInstance.post('/turfo/user/update-user',values)
         return response.data
     } catch (error) {
